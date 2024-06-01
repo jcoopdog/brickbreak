@@ -1,4 +1,4 @@
-import os, sys, random
+import os, sys, random, json
 import pygame
 from pygame.locals import *
 print("not malware ;)")
