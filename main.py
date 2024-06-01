@@ -11,6 +11,7 @@ screen = pygame.display.set_mode((800,600), flags=FULLSCREEN )
 ##screen = pygame.display.set_mode((800,600))
 pygame.display.set_caption('Bricks')
 black=pygame.Color(0,0,0)
+muted=False
 debug=False
 hardmode=True
 hardcore=False
@@ -26,6 +27,10 @@ r1=20
 r2=60
 ping=pygame.mixer.Sound('boop.wav')
 pygame.mixer.music.load('Mars.wav')
+
+#file Savings
+def savefile(
+
 
 #bat init
 bat = pygame.image.load('bat.png')
@@ -122,6 +127,7 @@ while True:
                     if key == K_ESCAPE: pygame.quit();pygame.mixer.quit();sys.exit()
                     if key == K_x:ping.set_volume(ping.get_volume()+0.1 if ping.get_volume() <1.0 else ping.get_volume())
                     if key == K_z:ping.set_volume(ping.get_volume()-0.1 if ping.get_volume() >=0 else ping.get_volume())
+                    if key == K_s:savefile()
                 except KeyError:
                     pass
             
